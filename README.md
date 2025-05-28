@@ -61,7 +61,7 @@ El foco está puesto en el uso de los principios de Programación Orientada a Ob
 
 ---
 
-## 📦 Clases sugeridas
+## 📦 Clases
 
 ### 🎫 Modelo de Ticket
 - `Ticket`  
