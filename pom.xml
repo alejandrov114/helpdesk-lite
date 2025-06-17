@@ -20,6 +20,11 @@
             <artifactId>javafx-fxml</artifactId>
             <version>13</version>
         </dependency>
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE260</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
