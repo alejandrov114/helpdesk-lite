@@ -7,7 +7,11 @@ package Controlador;
 /**
  *
  * @author alejo
+ * Controla la logica de negocio relacionada con los tickets
+ * Recibe eventes desde la vista(Como crear ticket) y se comunica con TicketManager para procesarlos
+ * Actualiza la vista con los resultados.
+ * 
  */
-public class NewClass {
+public class TicketController {
     
 }

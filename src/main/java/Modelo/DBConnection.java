@@ -7,7 +7,10 @@ package Modelo;
 /**
  *
  * @author alejo
+ * Esta clase maneja la conexión a la base de datos SQLite.
+ * Permite obtener una conexion activa para ser utilizada por clases como TicketManager.
+ * Encapsula los detalles técnicos de acceso a la base de datos.
  */
-public class NewClass {
+public class DBConnection {
     
 }
