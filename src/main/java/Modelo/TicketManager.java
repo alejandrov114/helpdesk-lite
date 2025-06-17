@@ -15,4 +15,7 @@ package Modelo;
  */
 public class TicketManager {
     
+    private static Ticket [] ticket = new Ticket[100];
+    private static int ticketCount = 0;
+    
 }

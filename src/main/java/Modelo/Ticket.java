@@ -16,11 +16,11 @@ package Modelo;
 public class Ticket {
     
     private int id;
-    private String nombre;
-    private String correo;
+    private String titulo;
     private String descripcion;
     private String prioridad;
     private String estado;
+    private int clienteId;
 
     //Constructor Vacio
     public Ticket() {
@@ -28,13 +28,13 @@ public class Ticket {
     
     //Constructor con atributos
 
-    public Ticket(int id, String nombre, String correo, String descripcion, String prioridad, String estado) {
+    public Ticket(int id, String titulo, String descripcion, String prioridad, String estado, int clienteId) {
         this.id = id;
-        this.nombre = nombre;
-        this.correo = correo;
+        this.titulo = titulo;
         this.descripcion = descripcion;
         this.prioridad = prioridad;
         this.estado = estado;
+        this.clienteId = clienteId;
     }
 
     public int getId() {
@@ -45,20 +45,12 @@ public class Ticket {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getDescripcion() {
@@ -84,13 +76,15 @@ public class Ticket {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    @Override
-    public String toString(){
-        return "Ticket # " + id + " [ " + prioridad + " ] - " + estado;
+
+    public int getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(int clienteId) {
+        this.clienteId = clienteId;
     }
     
     
-    
-    
+
 }

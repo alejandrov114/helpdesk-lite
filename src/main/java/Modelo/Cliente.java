@@ -11,6 +11,11 @@ package Modelo;
  * Representa un usuario convencional que necesita soporte técnico.
  * Puede crear tickets y ver unicamente sus tickets creados.
  */
-public class Cliente {
+public class Cliente extends Usuario {
+
+    public Cliente(String nombre, String correo, int id, String password) {
+        super(nombre, correo, id, password);
+    }
+    
     
 }

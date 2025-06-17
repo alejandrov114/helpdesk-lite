@@ -12,6 +12,10 @@ package Modelo;
  * Se comunica con TicketManager para acceder o modificar los datos.
  * 
  */
-public class Administrador {
+public class Administrador extends Usuario{
+
+    public Administrador(String nombre, String correo, int id, String password) {
+        super(nombre, correo, id, password);
+    }
     
 }
