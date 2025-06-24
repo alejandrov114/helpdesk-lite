@@ -63,5 +63,11 @@ public abstract class Usuario {
         this.password = password;
     }
     
-    
+      // Métodos abstractos que implementarán las subclases
+    public abstract Ticket[] verMisTickets(TicketManager gestor);
+
+    public abstract boolean crearTicket(TicketManager gestor, String titulo, String descripcion, String prioridad);
 }
+    
+    
+

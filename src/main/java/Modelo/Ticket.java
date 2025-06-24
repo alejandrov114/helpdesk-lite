@@ -84,7 +84,9 @@ public class Ticket {
     public void setClienteId(int clienteId) {
         this.clienteId = clienteId;
     }
-    
-    
 
+    @Override
+    public String toString() {
+    return "Ticket #" + id + " - " + titulo + " (" + prioridad + ", " + estado + ")";
+}
 }
