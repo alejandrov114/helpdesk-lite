@@ -37,6 +37,7 @@ public class LoginAdmins extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,7 +101,10 @@ public class LoginAdmins extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        brackgroundAdmin.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 300, 40));
+        brackgroundAdmin.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 300, 40));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\alejo\\Downloads\\buildings (6).png")); // NOI18N
+        brackgroundAdmin.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,7 +114,7 @@ public class LoginAdmins extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(brackgroundAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(brackgroundAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
         );
 
         pack();
@@ -122,11 +126,18 @@ public class LoginAdmins extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        panelControlAdmin mainAdmin = new panelControlAdmin();
+        mainAdmin.setVisible(true);
+        mainAdmin.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:    
-        
+        Login loginCliente = new Login();
+        loginCliente.setVisible(true);
+        loginCliente.setLocation(null);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
@@ -142,6 +153,7 @@ public class LoginAdmins extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables

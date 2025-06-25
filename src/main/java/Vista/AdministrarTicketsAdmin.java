@@ -29,31 +29,20 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         bgAdministrarTicketsAdmin = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        iconEmpresa = new javax.swing.JLabel();
+        IconNombreEmpresa = new javax.swing.JLabel();
+        IconUser = new javax.swing.JLabel();
+        iconHome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         bgAdministrarTicketsAdmin.setBackground(new java.awt.Color(255, 255, 255));
         bgAdministrarTicketsAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        bgAdministrarTicketsAdmin.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
 
         jPanel2.setBackground(new java.awt.Color(26, 67, 191));
 
@@ -66,19 +55,19 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(92, Short.MAX_VALUE)
+                .addContainerGap(105, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(89, 89, 89))
+                .addGap(96, 96, 96))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addGap(22, 22, 22))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
-        bgAdministrarTicketsAdmin.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 600, 70));
+        bgAdministrarTicketsAdmin.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 620, 70));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -107,21 +96,77 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        bgAdministrarTicketsAdmin.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 570, 90));
+        bgAdministrarTicketsAdmin.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 570, 140));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        iconEmpresa.setIcon(new javax.swing.ImageIcon("C:\\Users\\alejo\\Downloads\\buildings (4).png")); // NOI18N
+
+        IconNombreEmpresa.setFont(new java.awt.Font("Inter", 0, 10)); // NOI18N
+        IconNombreEmpresa.setForeground(new java.awt.Color(26, 67, 191));
+        IconNombreEmpresa.setText("HelpDesk Lite");
+
+        IconUser.setIcon(new javax.swing.ImageIcon("C:\\Users\\alejo\\Downloads\\user.png")); // NOI18N
+
+        iconHome.setIcon(new javax.swing.ImageIcon("C:\\Users\\alejo\\Downloads\\home.png")); // NOI18N
+        iconHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iconHomeMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(iconEmpresa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IconNombreEmpresa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 470, Short.MAX_VALUE)
+                .addComponent(iconHome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(IconUser)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(iconEmpresa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(IconUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(IconNombreEmpresa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(iconHome)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        bgAdministrarTicketsAdmin.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgAdministrarTicketsAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bgAdministrarTicketsAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgAdministrarTicketsAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(bgAdministrarTicketsAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void iconHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconHomeMouseClicked
+        // TODO add your handling code here:
+        
+        panelControlAdmin windowPanelAdmin = new panelControlAdmin();
+        windowPanelAdmin.setVisible(true);
+        windowPanelAdmin.setLocationRelativeTo(null);
+    }//GEN-LAST:event_iconHomeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -129,7 +174,11 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel IconNombreEmpresa;
+    private javax.swing.JLabel IconUser;
     private javax.swing.JPanel bgAdministrarTicketsAdmin;
+    private javax.swing.JLabel iconEmpresa;
+    private javax.swing.JLabel iconHome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -4,6 +4,10 @@
  */
 package Vista;
 
+import Modelo.Cliente;
+import Modelo.Ticket;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alejo
@@ -11,12 +15,15 @@ package Vista;
 public class crearTicket extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(crearTicket.class.getName());
-
+    
+     private Cliente cliente; // cliente logueado
     /**
      * Creates new form crearTicket
      */
     public crearTicket() {
+        this.cliente = cliente; 
         initComponents();
+        setTitle("Crear nuevo ticket");
     }
 
     /**
@@ -33,19 +40,21 @@ public class crearTicket extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtTitulo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtTicketCorreoElectronico = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        txtDescripcion = new javax.swing.JTextArea();
+        comboPrioridad = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        txtTicketNombre = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         bgCrearTicket.setBackground(new java.awt.Color(255, 255, 255));
+        bgCrearTicket.setForeground(new java.awt.Color(0, 0, 0));
         bgCrearTicket.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -76,8 +85,9 @@ public class crearTicket extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 10, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,64 +102,108 @@ public class crearTicket extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre:");
-        bgCrearTicket.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 130, -1));
+        bgCrearTicket.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 130, -1));
 
-        jTextField1.setText("jTextField1");
-        bgCrearTicket.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 310, 30));
+        txtTitulo.setBackground(new java.awt.Color(255, 255, 255));
+        txtTitulo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        bgCrearTicket.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 310, 30));
 
         jLabel3.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Correo electronico");
-        bgCrearTicket.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 130, -1));
+        bgCrearTicket.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 130, -1));
 
-        jTextField2.setText("jTextField1");
-        bgCrearTicket.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 310, 30));
+        txtTicketCorreoElectronico.setBackground(new java.awt.Color(255, 255, 255));
+        txtTicketCorreoElectronico.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        bgCrearTicket.add(txtTicketCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 310, 30));
 
         jLabel4.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Prioridad");
         bgCrearTicket.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 190, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtDescripcion.setBackground(new java.awt.Color(255, 255, 255));
+        txtDescripcion.setColumns(20);
+        txtDescripcion.setRows(5);
+        txtDescripcion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        jScrollPane1.setViewportView(txtDescripcion);
 
         bgCrearTicket.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 310, 100));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Alta", "Media", "Baja" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        comboPrioridad.setBackground(new java.awt.Color(255, 255, 255));
+        comboPrioridad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Alta", "Media", "Baja" }));
+        comboPrioridad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                comboPrioridadActionPerformed(evt);
             }
         });
-        bgCrearTicket.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 120, 30));
+        bgCrearTicket.add(comboPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 120, 30));
 
         jLabel5.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Descripción del problema");
         bgCrearTicket.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 190, -1));
 
-        jButton1.setText("jButton1");
+        jButton1.setBackground(new java.awt.Color(20, 74, 117));
+        jButton1.setFont(new java.awt.Font("Inter", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Enviar solicitud");
+        jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         bgCrearTicket.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 310, 40));
+
+        txtTicketNombre.setBackground(new java.awt.Color(255, 255, 255));
+        txtTicketNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        bgCrearTicket.add(txtTicketNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 310, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgCrearTicket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bgCrearTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgCrearTicket, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bgCrearTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void comboPrioridadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPrioridadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_comboPrioridadActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String nombre = txtTicketNombre.getText();
+        String correoElectronico = txtTicketCorreoElectronico.getText();
+        String titulo = txtTitulo.getText();
+        String descripcion = txtDescripcion.getText();
+        String prioridad = comboPrioridad.getSelectedItem().toString();
+        
+        // 2. Validar datos (opcional)
+        if (titulo.isEmpty() || descripcion.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor complete todos los campos.");
+        return;      
+    }//GEN-LAST:event_jButton1ActionPerformed
+        
+     //Crear objeto Ticket
+    Ticket nuevoTicket = new Ticket();
+    nuevoTicket.setTitulo(titulo);
+    nuevoTicket.setDescripcion(descripcion);
+    nuevoTicket.setPrioridad(prioridad);
+    nuevoTicket.setEstado("Abierto");
+    nuevoTicket.setClienteId(cliente.getId()); // cliente logueado
+    nuevoTicket.setClienteNombre(cliente.getNombre());
+    nuevoTicket.setClienteEmail(cliente.getClienteEmail());
+    }
     /**
      * @param args the command line arguments
      */
@@ -157,8 +211,8 @@ public class crearTicket extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bgCrearTicket;
+    private javax.swing.JComboBox<String> comboPrioridad;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -167,8 +221,9 @@ public class crearTicket extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextArea txtDescripcion;
+    private javax.swing.JTextField txtTicketCorreoElectronico;
+    private javax.swing.JTextField txtTicketNombre;
+    private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 }
