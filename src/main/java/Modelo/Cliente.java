@@ -12,10 +12,35 @@ package Modelo;
  * Puede crear tickets y ver unicamente sus tickets creados.
  */
 public class Cliente extends Usuario {
+    
+    private String ClienteNombre;
+    private String ClienteEmail;
+
+    public Cliente() {
+    }
+    
 
     public Cliente(String nombre, String correo, int id, String password) {
         super(nombre, correo, id, password);
     }
+
+    public String getClienteNombre() {
+        return ClienteNombre;
+    }
+
+    public void setClienteNombre(String ClienteNombre) {
+        this.ClienteNombre = ClienteNombre;
+    }
+
+    public String getClienteEmail() {
+        return ClienteEmail;
+    }
+
+    public void setClienteEmail(String ClienteEmail) {
+        this.ClienteEmail = ClienteEmail;
+    }
+    
+    
     
     
 }

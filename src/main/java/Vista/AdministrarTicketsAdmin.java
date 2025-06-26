@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import Modelo.Ticket;
+import Modelo.TicketManager;
 
 /**
  *
@@ -17,6 +21,7 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
      */
     public AdministrarTicketsAdmin() {
         initComponents();
+        cargarTickets();
     }
 
     /**
@@ -32,7 +37,7 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        administrarTicketsTabla = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         iconEmpresa = new javax.swing.JLabel();
         IconNombreEmpresa = new javax.swing.JLabel();
@@ -71,8 +76,8 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        administrarTicketsTabla.setBackground(new java.awt.Color(255, 255, 255));
+        administrarTicketsTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -94,7 +99,7 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(administrarTicketsTabla);
 
         bgAdministrarTicketsAdmin.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 570, 140));
 
@@ -159,7 +164,27 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void cargarTickets() {
+    TicketManager ticketManager = new TicketManager();
+    ArrayList<Ticket> lista = ticketManager.obtenerTodosLosTickets();
 
+    DefaultTableModel model = (DefaultTableModel) administrarTicketsTabla.getModel(); // Usa el nombre de tu JTable
+    model.setRowCount(0); // Limpiar tabla
+
+    for (Ticket t : lista) {
+        model.addRow(new Object[]{
+            t.getId(),
+            t.getTitulo(),
+            t.getDescripcion(),
+            t.getPrioridad(),
+            t.getEstado(),
+            t.getClienteNombre(),
+            t.getClienteEmail()
+        });
+    }
+}
+    
     private void iconHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconHomeMouseClicked
         // TODO add your handling code here:
         
@@ -176,6 +201,7 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IconNombreEmpresa;
     private javax.swing.JLabel IconUser;
+    private javax.swing.JTable administrarTicketsTabla;
     private javax.swing.JPanel bgAdministrarTicketsAdmin;
     private javax.swing.JLabel iconEmpresa;
     private javax.swing.JLabel iconHome;
@@ -183,6 +209,5 @@ public class AdministrarTicketsAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

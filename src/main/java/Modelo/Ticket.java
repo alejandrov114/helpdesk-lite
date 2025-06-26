@@ -21,6 +21,8 @@ public class Ticket {
     private String prioridad;
     private String estado;
     private int clienteId;
+    private String ClienteNombre;
+    private String ClienteEmail;
 
     //Constructor Vacio
     public Ticket() {
@@ -28,13 +30,15 @@ public class Ticket {
     
     //Constructor con atributos
 
-    public Ticket(int id, String titulo, String descripcion, String prioridad, String estado, int clienteId) {
+    public Ticket(int id, String titulo, String descripcion, String prioridad, String estado, int clienteId, String ClienteNombre, String ClienteEmail) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.prioridad = prioridad;
         this.estado = estado;
         this.clienteId = clienteId;
+        this.ClienteNombre = ClienteNombre;
+        this.ClienteEmail = ClienteEmail;
     }
 
     public int getId() {
@@ -83,6 +87,22 @@ public class Ticket {
 
     public void setClienteId(int clienteId) {
         this.clienteId = clienteId;
+    }
+
+    public String getClienteNombre() {
+        return ClienteNombre;
+    }
+
+    public void setClienteNombre(String ClienteNombre) {
+        this.ClienteNombre = ClienteNombre;
+    }
+
+    public String getClienteEmail() {
+        return ClienteEmail;
+    }
+
+    public void setClienteEmail(String ClienteEmail) {
+        this.ClienteEmail = ClienteEmail;
     }
     
     

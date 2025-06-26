@@ -4,6 +4,12 @@
  */
 package Vista;
 
+import java.util.ArrayList;
+import Modelo.Cliente;
+import Modelo.Ticket;
+import Modelo.TicketManager;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author alejo
@@ -15,8 +21,16 @@ public class VerTicketsCliente extends javax.swing.JFrame {
     /**
      * Creates new form VerTicketsCliente
      */
-    public VerTicketsCliente() {
+    
+     public VerTicketsCliente() {
+         
+    }
+   
+    private Cliente clienteLogueado;
+    public VerTicketsCliente(Cliente cliente) {
+        this.clienteLogueado = cliente;
         initComponents();
+        cargarTickets(); // Llamamos el método al iniciar
     }
 
     /**
@@ -32,7 +46,7 @@ public class VerTicketsCliente extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaTickets = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         iconEmpresa = new javax.swing.JLabel();
         IconNombreEmpresa = new javax.swing.JLabel();
@@ -72,8 +86,8 @@ public class VerTicketsCliente extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaTickets.setBackground(new java.awt.Color(255, 255, 255));
+        tablaTickets.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -95,7 +109,7 @@ public class VerTicketsCliente extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaTickets);
 
         bgVerTicketsCliente.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 570, 140));
 
@@ -161,12 +175,28 @@ public class VerTicketsCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cargarTickets() {
+    TicketManager ticketManager = new TicketManager();
+ArrayList<Ticket> lista = ticketManager.obtenerTicketsPorCliente(clienteLogueado.getId());
+    // Limpiar tabla
+    DefaultTableModel model = (DefaultTableModel) tablaTickets.getModel();
+    model.setRowCount(0);
+
+    // Agregar filas con los datos de los tickets
+    for (Ticket t : lista) {
+        model.addRow(new Object[]{
+            t.getId(),
+            t.getTitulo(),
+            t.getDescripcion(),
+            t.getPrioridad(),
+            t.getEstado()
+        });
+    }
+}
     private void iconHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconHomeMouseClicked
         // TODO add your handling code here:
         
-        panelControlCliente windowPanelCliente = new panelControlCliente();
-        windowPanelCliente.setVisible(true);
-        windowPanelCliente.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_iconHomeMouseClicked
 
     /**
@@ -184,6 +214,6 @@ public class VerTicketsCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaTickets;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,11 @@
  */
 package Vista;
 
+import Modelo.Cliente;
+import Modelo.Ticket;
+import Modelo.TicketManager;
+
+
 /**
  *
  * @author alejo
@@ -15,8 +20,13 @@ public class panelControlCliente extends javax.swing.JFrame {
     /**
      * Creates new form panelControlCliente
      */
+    
+    
+
+    
     public panelControlCliente() {
         initComponents();
+     
     }
 
     /**
@@ -168,6 +178,7 @@ public class panelControlCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
@@ -180,9 +191,10 @@ public class panelControlCliente extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        VerTicketsCliente mainVerTicketsCliente = new VerTicketsCliente();
-        mainVerTicketsCliente.setVisible(true);
-        mainVerTicketsCliente.setLocationRelativeTo(null);
+        VerTicketsCliente windowVerTicketsCliente = new VerTicketsCliente();
+        windowVerTicketsCliente.setVisible(true);
+        windowVerTicketsCliente.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
