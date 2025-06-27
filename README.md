@@ -113,5 +113,6 @@ Alejandro Villa Osorio
 Juan José Toro
 Juan Manuel Correa
 
+![image](https://github.com/user-attachments/assets/eff1cc44-6c25-49d7-bac5-b3274c1aaa69)
 
 
