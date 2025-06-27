@@ -113,6 +113,27 @@ Alejandro Villa Osorio
 Juan José Toro
 Juan Manuel Correa
 
+Vista Login
 ![image](https://github.com/user-attachments/assets/eff1cc44-6c25-49d7-bac5-b3274c1aaa69)
+
+Vista panel control User
+![image](https://github.com/user-attachments/assets/08cab467-aa54-4da9-9161-230845d398b0)
+
+Vista crear ticket user
+![image](https://github.com/user-attachments/assets/ba2e8181-60ec-4310-9830-a92412644301)
+
+Vista ver mis ticket user
+![image](https://github.com/user-attachments/assets/4d17ab4f-422f-4f9f-b467-f3203d293466)
+
+Vista panel control Admin
+![image](https://github.com/user-attachments/assets/6befe004-acf3-4441-8aef-97894ea2dff3)
+
+Vista tickets cerrados admin
+![image](https://github.com/user-attachments/assets/1df8e7ae-5391-43f4-b3cf-8769f656ddc5)
+
+Vista todos los tickets admin
+![image](https://github.com/user-attachments/assets/7d205a1e-addd-4cc5-b243-092ea18f2f41)
+
+
 
 
